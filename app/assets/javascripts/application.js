@@ -9,6 +9,16 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require rails-ujs
+//= require _app
 //= require_tree .
+
+(function(){
+    'use strict';
+
+    var load = function() {
+        for(let prop in this.App.scripts) {
+            this.App.scripts[prop].call(this);
+        }
+    }
+    window.addEventListener('DOMContentLoaded', load);
+}).call(this)
