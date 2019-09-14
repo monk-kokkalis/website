@@ -14,11 +14,18 @@
 
 (function(){
     'use strict';
-
+   
     var load = function() {
         for(let prop in this.App.scripts) {
             this.App.scripts[prop].call(this);
         }
     }
+
+    var scroll = function() {
+        this.App.navigation();
+    }
+
+    window.addEventListener('scroll', scroll);
     window.addEventListener('DOMContentLoaded', load);
 }).call(this)
+

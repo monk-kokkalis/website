@@ -1,18 +1,23 @@
 this.App.scripts.static_pages = function() {
     var retracting_text = document.querySelector('.retracting-text');
-    // retracting_text.width = retracting_text.scrollWidth + 'px';
-    var element_width = retracting_text.scrollWidth;
-
-    console.log(element_width)
+    var bouncing_link = document.querySelector('.banner__down-arrow');
+    var animation_present = true;
+    var bouncing = true;
     window.setInterval(function() {
-        if (retracting_text.classList.contains('retracted')) {
-            retracting_text.style.width = element_width + 'px';
-            retracting_text.classList.remove('retracted');
+        if (animation_present) {
+            retracting_text.classList.remove('retract')
         } else {
-            console.log(element_width * 0.28 +  'px')
-            retracting_text.style.width = element_width * 0.28 +  'px';
-            
-            retracting_text.classList.add('retracted');
+            retracting_text.classList.add('retract')
         }
-    }, 1500);
+        animation_present = !animation_present;
+    },  1800);
+
+    window.setInterval(function() {
+        if (bouncing) {
+            bouncing_link.classList.remove('bounce');
+        } else {
+            bouncing_link.classList.add('bounce');
+        }
+        bouncing = !bouncing;
+    }, 2300);
 }

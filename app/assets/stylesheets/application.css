@@ -1,15 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
@@ -17,21 +6,21 @@
  *, *::before, *::after {
      margin: 0;
      padding: 0;
-     box-sizing: 0;
+     box-sizing: border-box;
  }
 
 body {
     font-family: Raleway, verdana, arial;   
 }
 
-/* main section */
 section.main-section {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('background.jpg');
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 div.banner {
@@ -51,10 +40,9 @@ h2.banner__sub-header {
     font-size: 24px;
     font-weight: 300;
     overflow: hidden;
-    transition: width 800ms ease-out;
+    transition: width 350ms ease-out;
     white-space: nowrap;
     position: relative;
-    /* background: blue; */
     width: 110%;
 }
 
@@ -71,11 +59,7 @@ h2.banner__sub-header.retracting-text::after {
 
 
 h2.banner__sub-header.retracting-text {
-    background: blue;
-    /* width: 380px; */
-    display: inline-block;
-    /* width: 100%; */
-    width: auto;
+    max-width: 75%;
 }
 
 h2.banner__sub-header span {
@@ -86,22 +70,30 @@ h2.banner__sub-header span::after {
     content: ' ';
 }
 
-/* end main section */
-
-/* navigation */
+a.banner__down-arrow {
+    color: #fff;
+    display: inline-block;
+    font-size: 40px;
+    position: absolute;
+    bottom: 10%;
+    left: 12%
+}
 
 nav.navigation {
-    padding: 40px 20px;
-    margin: 0 40px;
+    padding: 26px 40px;
+    top: 0;
     position: absolute;
-    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 2;
+    transform-origin: top;
 }
 
 ul.navigation__list {
     list-style: none;
     float: right;
     display: flex;
-    
 }
 
 ul.navigation__list li {
@@ -114,7 +106,7 @@ ul.navigation__list a {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 13px;
-    transition: opacity 200ms ease-in;
+    user-select: none;
 }
 
 ul.navigation__list li:not(:first-of-type) a:hover {
@@ -122,7 +114,72 @@ ul.navigation__list li:not(:first-of-type) a:hover {
 }
 
 ul.navigation__list li:first-of-type a {
-    border-bottom: 2px solid #ffff;
+    color: #fff;
 }
 
-/* end navigation */
+@keyframes position_fixed {
+    0%{
+        opacity: 0;
+        background-color: transparent;
+        transform: scaleY(1.3) perspective(1px) translateZ(0);
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        position: fixed;
+        background-color: #fff;
+        box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+        transform: scaleY(1) perspective(1px) translateZ(0);
+    }
+}
+
+@keyframes position_absolute {
+    0% {
+        opacity: 0;
+        background-color: #fff;
+        transform: scaleY(1.3) perspective(1px) translateZ(0);
+        box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        position: absolute;
+        background-color: transparent;
+        transform: scaleY(1) perspective(1px) translateZ(0);
+        box-shadow: none;
+    }
+}
+
+.retract {
+     animation: retract 900ms ease-in-out alternate 2;
+}
+@keyframes retract{
+    100% {
+        width: 156px;
+    }
+}
+
+.bounce {
+    animation: bounce 600ms ease-in-out alternate 2;
+}
+@keyframes bounce {
+    0% {
+        bottom: 10%;
+    }
+
+    50% {
+        bottom: 15%
+    }
+
+    100% {
+        bottom: 12%;
+    }
+}
