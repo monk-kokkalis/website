@@ -1,7 +1,7 @@
 this.App.navigation = function() {
     var navigation = document.querySelector('nav.navigation');
     var links = document.querySelectorAll('ul.navigation__list a');
-    var button = document.querySelector('button.navigation__mobile-button');
+    var button_bars = document.querySelectorAll('button.navigation__mobile-button span');
     var color = '#fff';
     if (window.pageYOffset > 50) {
         navigation.style.animation = 'position_fixed 600ms ease-out forwards';
@@ -15,5 +15,7 @@ this.App.navigation = function() {
     Array.prototype.forEach.call(links, function(item){
         item.style.color = color;
     })
-    button.style.color = color;
+    Array.prototype.forEach.call(button_bars, function(bar){
+        bar.style.backgroundColor = color;
+    })
 };

@@ -174,7 +174,6 @@ ul.navigation__list li:first-of-type a {
 }
 
 button.navigation__mobile-button {
-    color: #fff;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -183,11 +182,17 @@ button.navigation__mobile-button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 43px;
+    outline: none;
 }
 
-button.navigation__mobile-button > * {
-    max-height: 12px;
-    transform-origin: bottom;
+button.navigation__mobile-button > span {
+    width: 50px;
+    height: 8px;
+    transform-origin: center right;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: transform 450ms ease-in-out;
 }
 
 @keyframes position_fixed {
@@ -232,7 +237,7 @@ button.navigation__mobile-button > * {
 }
 
 .bounce {
-    animation: bounce 600ms ease-in-out alternate 2;
+    animation: bounce 800ms ease-in-out alternate 2;
 }
 @keyframes bounce {
     0% {
@@ -257,14 +262,4 @@ button.navigation__mobile-button > * {
    }
 }
 
-.rotate {
-    animation: rotate 1000ms ease-in-out forwards infinite;
-}
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-45deg);
-    }
-}
+
