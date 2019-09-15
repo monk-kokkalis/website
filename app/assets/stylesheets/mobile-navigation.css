@@ -1,0 +1,33 @@
+button.navigation__mobile-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 43px;
+    outline: none;
+}
+
+button.navigation__mobile-button > span {
+    width: 50px;
+    height: 8px;
+    transform-origin: right;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: transform 450ms ease-in-out;
+}
+
+nav.mobile-navigation {
+    position: fixed;
+    top: 103px;
+    background-color: #fff;
+    z-index: 2;
+}
+
+nav.mobile-navigation a {
+    color: #000000;
+}
+

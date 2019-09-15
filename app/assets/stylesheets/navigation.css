@@ -1,0 +1,27 @@
+nav.navigation {
+    padding: 35px 40px;
+    top: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1;
+}
+
+ul.navigation__list {
+    list-style: none;
+    float: right;
+    display: flex;
+}
+
+ul.navigation__list li {
+    padding-left: 13px;
+}
+
+ul.navigation__list li:not(:first-of-type) a:hover {
+    opacity: 0.6;
+}
+
+ul.navigation__list li:first-of-type a {
+    color: #fff;
+}
