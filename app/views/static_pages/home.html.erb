@@ -1,16 +1,26 @@
 <%= render partial: 'partial/navigation' %>
 <section class="main-section">
     <div class="banner">
+        <% if false %>
         <h1 class="banner__main-header">Hi, I'm Monk.</h1>
         <h2 class="banner__sub-header">Web Applications Developer</h2>
+        <% end %>
+        <h1 class="banner__main-header">Welcome</h1>
+        <h2 class="banner__sub-header">Text for testing</h2>
         <h2 class="banner__sub-header retracting-text retract">Specialized in <span>Creating Websites.</span></h2>
     </div>
-    <a href="#about-me-section" class="banner__down-arrow bounce" data-target="about-me">
-        <i class="fas fa-chevron-down" data-target="about-me"></i>
+    <a href="#about-me-section" class="banner__down-arrow bounce" data-controller="home_page">
+        <i 
+            class="fas fa-chevron-down down-arrow-link" 
+            data-controller="home_page">
+        </i>
     </a>
 </section>
 <section style="height: 300px;" id="about-me">
-<h1>About me</h1>
+<% if false %>
+    <h1>About me</h1>
+<% end%>
+<h1>About</h1>
 </section>
 
 
