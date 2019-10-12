@@ -1,29 +1,58 @@
 <%= render partial: 'partial/navigation' %>
 <section class="main-section">
     <div class="banner">
-        <% if false %>
+        <%# <% if false %>
         <h1 class="banner__main-header">Hi, I'm Monk.</h1>
         <h2 class="banner__sub-header">Web Applications Developer</h2>
-        <% end %>
-        <h1 class="banner__main-header">Welcome</h1>
-        <h2 class="banner__sub-header">Text for testing</h2>
         <h2 class="banner__sub-header retracting-text retract">Specialized in <span>Creating Websites.</span></h2>
+        <%# <% end %>
+        <%# <h1 class="banner__main-header">Welcome</h1>
+        <h2 class="banner__sub-header">Text for testing</h2> %>
+        <%# <h2 class="banner__sub-header retracting-text retract">Specialized in <span>Creating Websites.</span></h2> %>
     </div>
     <a href="#about-me-section" class="banner__down-arrow bounce" data-controller="home_page">
         <i 
-            class="fas fa-chevron-down down-arrow-link" 
+            class="ti-angle-down down-arrow-link" 
             data-controller="home_page">
         </i>
     </a>
 </section>
-<section style="height: 300px;" id="about-me">
-<% if false %>
-    <h1>About me</h1>
-<% end%>
-<h1>About</h1>
+<section class="about-me" id="about-me">
+    <div class="about-me__profile-picture-container">
+        <%= image_tag 'res-guy.jpg' %>
+    </div>
+    <div class="about-me__text">
+        <h2>About Me</h2>
+        <h3>Web Developer</h3>
+        <p>
+            I'm <strong>Monk Kokkalis</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </p>
+        <p>
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+        <div class="about-me__icons">
+            <a href="#" class="about-me__icons__icon">
+                <i class="ti-facebook"></i>
+            </a>
+
+            <a href="#" class="about-me__icons__icon">
+                <i class="ti-twitter-alt"></i>
+            </a>
+
+            <a href="#" class="about-me__icons__icon">
+                <i class="ti-google"></i>
+            </a>
+
+            <a href="#" class="about-me__icons__icon">
+                <i class="ti-instagram"></i>
+            </a>
+
+            <a href="#" class="about-me__icons__icon">
+                <i class="ti-tumblr-alt"></i>
+            </a>
+        </div>
+    </div>
 </section>
-
-
 <section style="height: 600px;" id="about">
-<h1>Services</h1>
+<h2>Services</h2>
 </section>

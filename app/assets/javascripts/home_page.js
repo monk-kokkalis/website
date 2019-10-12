@@ -30,13 +30,13 @@ this.App.scripts.home_page = function() {
         var target = document.querySelector('#about-me');
         var target_position = target.getBoundingClientRect().top;
         var start_position = window.pageYOffset;
-        var distance = target_position - start_position;
+        var distance = target_position;
         var start_time = null;
     
         function animation(current_time) {
             if (!start_time) start_time = current_time;
             var progress = current_time - start_time;
-            var movement = ease(progress, start_position, distance - 113, 1000);
+            var movement = ease(progress, start_position, distance - 73, 1000);
             if (progress < 1000) {
                 window.scrollTo(0, movement);
                 requestAnimationFrame(animation);

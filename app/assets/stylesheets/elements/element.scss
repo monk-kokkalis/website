@@ -1,8 +1,13 @@
+section {
+    padding: 80px 50px;
+    min-height: 100vh;
+}
+
 a {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
     font-weight: 400;
     font-size: 13px;
-    user-select: none;
+    user-select: none;  
 }
