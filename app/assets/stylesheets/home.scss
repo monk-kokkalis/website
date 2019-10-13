@@ -124,19 +124,41 @@ a.banner__down-arrow {
 section.about-me {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 div.about-me__profile-picture-container {
     flex: 0 1 40%;
     position: relative;
+    margin-top: 20px;
+    @media (max-width: 767px) {
+        flex: 0 1 100%;
+    }
     img {
-        position: absolute;
         width: 100%;
+    }
+
+    &::before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 30px;
+        background-color: #f1f1f1;
+        height: 100%;
+        width: 100%;
+        @media (max-width: 1000px) {
+            display: none;
+        }
     }
 }
 
 div.about-me__text {
     flex: 0 1 53%;
+    margin-top: 20px;
+    @media (max-width: 767px) {
+        flex: 0 1 100%;
+    }
     h2 {
         font-size: 32px;
         text-transform: uppercase;
@@ -171,6 +193,128 @@ div.about-me__text {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+    }
+}
+
+section.services {
+    background-color: #f2f2f2;
+    h2, h3 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    h2.services-first__header {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    ul.services__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+
+            & > * {
+                margin-bottom: 20px;
+            }
+
+            margin-top: 40px;
+            flex: 0 1 30%;
+            height: 265px;
+            text-align: center;
+            @media (max-width: 768px) {
+                flex: 0 1 49%;
+            }
+
+            @media (max-width: 500px) {
+                flex: 0 1 100%;
+            }
+            span.services__list__icon-container {
+                height: 80px;
+                width: 80px;
+                border-radius: 50%;
+                border: 1px solid #e3e3e3;
+                position: relative;
+                display: inline-block;
+                transition: background-color 450ms ease-in-out;
+                cursor: pointer;
+                &:hover {
+                    background-color: #fefefe;
+                }
+                i {
+                    position: absolute;
+                    font-size: 30px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #222222;
+                }
+            }
+            h4 {
+                font-size: 18px;
+                color: #222222;
+                text-transform: uppercase;
+                font-weight: 900;
+            }
+
+            p {
+                line-height: 25px;
+            }
+        }
+    }
+}
+
+section.achievements {
+    min-height: 360px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('coffee-shop.jpeg');
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+
+    div.achievements__item {
+        height: 200px;
+        // border: 1px solid whitesmoke;
+        flex: 0 1 24%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        & > * {
+            flex: 0 1 33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 40px;
+        }
+        div.achievements__item__icon-container {
+            color: #ffffff;
+            position: relative;
+            align-items: flex-start;
+            i {
+                position: relative;
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 4px;
+                    background-color: #ffffff;
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    border-radius: 20%;
+                }
+            }
+        }
+        p.achievements__item__description {
+            font-size: 20px;
+            font-weight: 600;
         }
     }
 }
