@@ -3,6 +3,15 @@ this.App.scripts.home_page = function() {
     var bouncing_link = document.querySelector('.banner__down-arrow');
     var animation_present = true;
     var bouncing = true;
+
+    var achievements_section = document.querySelector('section#achievements');
+    var bounding_rect = achievements_section.getBoundingClientRect();
+
+    window.setInterval(function() {
+        if (App.global_variables.animating) return;
+        if (window.pageYOffset < 600) App.global_variables.animating = false;
+    }, 100)
+
     window.setInterval(function() {
         if (animation_present) {
             retracting_text.classList.remove('retract')

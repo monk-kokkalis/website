@@ -188,11 +188,20 @@ div.about-me__text {
         font-size: 16px;
         margin-right: 10px;
         position: relative;
+        transition: background-color 350ms ease-in-out;
+        border: 2px solid #222222;
+        &:hover {
+            background-color: #ffffff;
+            i {
+                color: #222222;
+            }
+        }
         i {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            transition: color 350ms ease-in-out;
         }
     }
 }
@@ -219,7 +228,6 @@ section.services {
         justify-content: space-between;
 
         li {
-
             & > * {
                 margin-bottom: 20px;
             }
@@ -286,6 +294,7 @@ section.achievements {
         flex-direction: column;
         justify-content: space-between;
         position: relative;
+        user-select: none;
         & > * {
             flex: 0 1 33%;
             display: flex;
