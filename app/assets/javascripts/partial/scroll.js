@@ -25,22 +25,30 @@ this.App.scroll = function() {
     var bounding_rect = achievements_section.getBoundingClientRect();
     var numbers = document.querySelectorAll('div.achievements__item__count');
  
-
-    if (bounding_rect.top < 415) {
+    if (bounding_rect.top < window.innerHeight) {
         animate_count();
-    } 
+    } else {
+        App.global_variables.animating = false;
+    }
 
     function animate_count() {
         if (App.global_variables.animating) return;
+        if (App.global_variables.interval_present) return;
         App.global_variables.animating = true;
+        App.global_variables.interval_present = true;
         var counter = 0;
         var interval = window.setInterval(function() {
-            numbers[0].innerHTML = counter;
+            Array.prototype.forEach.call(numbers, function(number, index) {
+                if (index == 1 && counter >= 54) return;
+                if (index == 2 && counter >= 43) return;
+                if (index == 3 && counter >= 29) return;
+                number.innerHTML = counter;
+            })
             counter += 1;
-            if (counter == 121) {
+            if (counter == 84) {
                 clearInterval(interval);
+                App.global_variables.interval_present = false;
             }
-            
-        }, 10);
+        }, 50);
     }
 };

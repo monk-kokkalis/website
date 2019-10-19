@@ -4,9 +4,6 @@ this.App.scripts.home_page = function() {
     var animation_present = true;
     var bouncing = true;
 
-    var achievements_section = document.querySelector('section#achievements');
-    var bounding_rect = achievements_section.getBoundingClientRect();
-
     window.setInterval(function() {
         if (App.global_variables.animating) return;
         if (window.pageYOffset < 600) App.global_variables.animating = false;
