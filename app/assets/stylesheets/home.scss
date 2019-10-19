@@ -392,6 +392,7 @@ section.portfolio {
         flex-wrap: wrap;
         justify-content: space-between;
         figure {
+            text-align: center;
             flex: 0 1 32%;
             @media (max-width: 1000px) {
                 flex: 0 1 49%;
@@ -401,14 +402,12 @@ section.portfolio {
                 flex: 0 1 100%;
             }
             margin-top: 10px;
-            height: 200px;
+            height: 220px;
             border: 1px solid black;
             overflow: hidden;
-            img {
+            div.portfolio__gallery__item__container, img {
+                margin: auto;
                 width: 450px;
-                @media (max-width: 450px) {
-                    width: 430px;
-                }
             }
         }
     }
