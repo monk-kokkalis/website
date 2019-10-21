@@ -197,33 +197,50 @@
     </ul>
     <div class="portfolio__gallery">
         <figure class="portfolio__gallery__item">
-            <div class="portfolio__gallery__item__container">
-                <%= image_tag 'portfolio/book.jpg' %>
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container">
+                <% if false %>
+                    <%= image_tag 'portfolio/book.jpg', class: 'portfolio__gallery__item__image' %>
+                <% end %>
+                <%= image_tag 'portfolio/book.jpg', class: 'portfolio__gallery__item__image' %>
+                </div>
+            </div>
+        </figure>
+        
+        
+        <figure class="portfolio__gallery__item">
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container">
+                    <%= image_tag 'portfolio/coffee.jpg' %>
+                </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
-            <div class="portfolio__gallery__item__container">
-                <%= image_tag 'portfolio/coffee.jpg' %>
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container">
+                    <%= image_tag 'portfolio/mac-coffee.jpg' %>
+                </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
-            <div class="portfolio__gallery__item__container aa">
-                <%= image_tag 'portfolio/mac-coffee.jpg' %>
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container">
+                    <%= image_tag 'portfolio/mac.jpg' %>
+                </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
-            <div class="portfolio__gallery__item__container">
-                <%= image_tag 'portfolio/mac.jpg' %>
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container">
+                    <%= image_tag 'portfolio/restaurant.jpg' %>
+                </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
-            <div class="portfolio__gallery__item__container">
-                <%= image_tag 'portfolio/restaurant.jpg' %>
-            </div>
-        </figure>
-        <figure class="portfolio__gallery__item">
-            <div class="portfolio__gallery__item__container">
-                <%= image_tag 'portfolio/seafood.jpg' %>
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container">
+                    <%= image_tag 'portfolio/seafood.jpg' %>
+                </div>
             </div>
         </figure>
     </div>

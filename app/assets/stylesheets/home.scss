@@ -340,6 +340,7 @@ section.achievements {
 }
 
 section.portfolio {
+    position: relative;
     h2 {
         font-size: 20px;
         font-weight: 500;
@@ -404,11 +405,33 @@ section.portfolio {
             margin-top: 10px;
             height: 220px;
             border: 1px solid black;
-            overflow: hidden;
-            div.portfolio__gallery__item__container, img {
+            outline: 1px solid red;
+            display: block;
+            div.portfolio__gallery__item__placeholder {
+                height: 100%;
+                max-width: 450px;
+                width: 100%;
                 margin: auto;
-                width: 450px;
+                outline: 1px solid yellow;
             }
+            div.portfolio__gallery__item__container {
+                margin: auto;
+                width: 100%;
+                max-width: 450px;
+            }
+            div.portfolio__gallery__item__container img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        div.portfolio__gallery__item__container {
+            top: 0;
+            left: 0;
+            height: 220px;
+            overflow: hidden;
+            position: absolute;
+            transition: top 500ms ease-in-out, left 500ms ease-in-out;
         }
     }
 }

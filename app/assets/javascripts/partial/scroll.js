@@ -7,11 +7,13 @@ this.App.scroll = function() {
 
     if (window.pageYOffset > 50) {
         navigation.style.animation = 'position_fixed 600ms ease-out forwards';
+        navigation.style.position = 'fixed';
         color = '#000000';
         navigation.setAttribute('data-scroll-locked', false);
     } else {
         if (navigation.getAttribute('data-scroll-locked') == 'true') return;
         navigation.style.animation = 'position_absolute 400ms ease-out forwards';
+        navigation.style.position = 'absolute';
         color = '#fff';
     }
     Array.prototype.forEach.call(links, function(item){

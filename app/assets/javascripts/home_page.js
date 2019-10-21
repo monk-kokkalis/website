@@ -48,13 +48,28 @@ this.App.scripts.home_page = function() {
                 requestAnimationFrame(animation);
             }
         }
-
-        function ease(t, b, c, d) {
-            t /= d/2;
-            if (t < 1) return c/2*t*t*t + b;
-            t -= 2;
-            return c/2*(t*t*t + 2) + b;
-        }
         requestAnimationFrame(animation);
+    }
+    function ease(t, b, c, d) {
+        t /= d/2;
+        if (t < 1) return c/2*t*t*t + b;
+        t -= 2;
+        return c/2*(t*t*t + 2) + b;
+    }
+    
+    var placeholders = document.querySelectorAll('div.portfolio__gallery__item__placeholder');
+    var image_containers = document.querySelectorAll('div.portfolio__gallery__item__container');
+    var portfolio_bounds = document.querySelector('section#portfolio').getBoundingClientRect();
+    (function init_portfolio_images() {
+        image_containers.each_element(function(element, index) {
+            var bounds = placeholders[index].getBoundingClientRect();
+            element.style.top = bounds.top - portfolio_bounds.top + 'px';
+            element.style.left = bounds.left - portfolio_bounds.left + 'px';
+        });
+    })();
+
+    this.filter_portfolio = function() {
+        var figures = document.querySelectorAll('figure.portfolio__gallery__item');
+        var image_containers = document.querySelectorAll('div.portfolio__gallery__item__container');
     }
 }
