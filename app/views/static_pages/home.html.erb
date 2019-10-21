@@ -183,26 +183,38 @@
     <h3 class="portfolio__description">Projects I have done</h3>
     <ul class="portfolio__button-list">
         <li>
-            <button class="active">All</button>
+            <button class="active" 
+                data-category="all"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">All</button>
         </li>
         <li>
-            <button>Web Design</button>
+            <button 
+                data-category="web-design"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">Web Design</button>
         </li>
         <li>
-            <button>Applications</button>
+            <button 
+                data-category="applications"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">Applications</button>
         </li>
         <li>
-            <button>Development</button>
+            <button 
+                data-category="development"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">Development</button>
         </li>
     </ul>
     <div class="portfolio__gallery">
         <figure class="portfolio__gallery__item">
             <div class="portfolio__gallery__item__placeholder">
-                <div class="portfolio__gallery__item__container">
-                <% if false %>
-                    <%= image_tag 'portfolio/book.jpg', class: 'portfolio__gallery__item__image' %>
-                <% end %>
-                <%= image_tag 'portfolio/book.jpg', class: 'portfolio__gallery__item__image' %>
+                <div class="portfolio__gallery__item__container" data-category="all">
+                    <%# <div class="portfolio__gallery__item__container__lightbox">
+                    
+                    </div> %>
+                    <%= image_tag 'portfolio/shu.jpg', class: 'portfolio__gallery__item__image' %>
                 </div>
             </div>
         </figure>
@@ -210,38 +222,40 @@
         
         <figure class="portfolio__gallery__item">
             <div class="portfolio__gallery__item__placeholder">
-                <div class="portfolio__gallery__item__container">
+                <div class="portfolio__gallery__item__container" data-category="development applications all">
                     <%= image_tag 'portfolio/coffee.jpg' %>
                 </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
             <div class="portfolio__gallery__item__placeholder">
-                <div class="portfolio__gallery__item__container">
+                <div class="portfolio__gallery__item__container" data-category="web-design applications all">
                     <%= image_tag 'portfolio/mac-coffee.jpg' %>
                 </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
             <div class="portfolio__gallery__item__placeholder">
-                <div class="portfolio__gallery__item__container">
+                <div class="portfolio__gallery__item__container" data-category="development all">
                     <%= image_tag 'portfolio/mac.jpg' %>
                 </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
             <div class="portfolio__gallery__item__placeholder">
-                <div class="portfolio__gallery__item__container">
+                <div class="portfolio__gallery__item__container" data-category="web-design applications all">
                     <%= image_tag 'portfolio/restaurant.jpg' %>
                 </div>
             </div>
         </figure>
         <figure class="portfolio__gallery__item">
             <div class="portfolio__gallery__item__placeholder">
-                <div class="portfolio__gallery__item__container">
+                <div class="portfolio__gallery__item__container" data-category="web-design applications all">
+                    
                     <%= image_tag 'portfolio/seafood.jpg' %>
                 </div>
             </div>
         </figure>
+        
     </div>
 </section>

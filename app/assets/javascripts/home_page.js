@@ -69,7 +69,31 @@ this.App.scripts.home_page = function() {
     })();
 
     this.filter_portfolio = function() {
-        var figures = document.querySelectorAll('figure.portfolio__gallery__item');
+        var placeholders = document.querySelectorAll('div.portfolio__gallery__item__placeholder');
         var image_containers = document.querySelectorAll('div.portfolio__gallery__item__container');
-    }
+        var portfolio_bounds = document.querySelector('section#portfolio').getBoundingClientRect();
+
+        var filter_buttons = document.querySelectorAll('button[data-handler=filter_portfolio]');
+        filter_buttons.each_element(function(element) {
+            element.classList.remove('active');
+        });
+        this.classList.add('active');
+        var category = this.dataset.category;
+        var filtered = image_containers.map_elements(function(element) {
+            if (!element.dataset.category) return false;
+            return element.dataset.category.match(category);
+        });
+        var counter = 0;
+        filtered.forEach(function(object) {
+            if (object.passed) {
+                var bounds = placeholders[counter].getBoundingClientRect();
+                object.element.style.left = bounds.left - portfolio_bounds.left + 'px';
+                object.element.style.top = bounds.top - portfolio_bounds.top + 'px';
+                object.element.style.transform = 'scale(1, 1)';
+                counter += 1;
+            } else {
+                object.element.style.transform = 'scale(0, 0)';
+            }
+        });
+    }   
 }
