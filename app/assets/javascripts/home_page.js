@@ -65,6 +65,7 @@ this.App.scripts.home_page = function() {
             var bounds = placeholders[index].getBoundingClientRect();
             element.style.top = bounds.top - portfolio_bounds.top + 'px';
             element.style.left = bounds.left - portfolio_bounds.left + 'px';
+            
         });
     })();
 
