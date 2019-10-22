@@ -340,6 +340,7 @@ section.achievements {
 
 section.portfolio {
     position: relative;
+    // min-height: 1000px;
     h2 {
         font-size: 20px;
         font-weight: 500;
@@ -404,12 +405,14 @@ section.portfolio {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        
         figure {
             text-align: center;
             flex: 0 1 33%;
             max-height: 360px;
             height: 360px;
-
+            // transition: height 300ms ease-out;
+            
             @media (max-width: 1268px) {
                 height: 250px;
             }
@@ -423,14 +426,14 @@ section.portfolio {
             }
 
             margin-top: 10px;
-            outline: 1px solid red;
+            // outline: 1px solid red;
             display: block;
             div.portfolio__gallery__item__placeholder {
                 height: 100%;
-                max-width: 450px;
+                max-width: 600px;
                 width: 100%;
                 margin: auto;
-                outline: 1px solid yellow;
+                // outline: 1px solid yellow;
             }
             div.portfolio__gallery__item__container img {
                 height: 100%;
@@ -443,7 +446,7 @@ section.portfolio {
             left: 0;
             height: 360px;
             width: 100%;
-            max-width: 450px;
+            max-width: 600px;
             margin: auto;
             overflow: hidden;
             position: absolute;
@@ -454,14 +457,69 @@ section.portfolio {
             @media (max-width: 380px) {
                 flex: 0 1 100%;
             }
+            &:hover div.portfolio__gallery__item__container__lightbox > * {
+                opacity: 1;
+                top: 0;
+                transform: scale(1);
+            }
+            &:hover div.portfolio__gallery__item__container__lightbox > div {
+                opacity: 0.9;
+            }
             div.portfolio__gallery__item__container__lightbox {
-                background: green;
                 position: absolute;
                 width: 90%;
                 height: 90%;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                & > * {
+                    transition: top 400ms ease-in-out,
+                                transform 400ms ease-in-out,
+                                opacity 400ms ease-in-out;
+                }
+                div {
+                    height: 100%;
+                    width: 100%;
+                    background-color: #ffffff;
+                    position: absolute;
+                    opacity: 0;
+                    z-index: -1;
+                    transform: scale(0.9);
+                }
+                h2 {
+                    position: relative;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-size: 16px;
+                    color: #222222;
+                    margin-bottom: 40px;
+                    opacity: 0;
+                    top: -10px;
+                }
+
+                button {
+                    background: #ffffff;
+                    background-color: #ffffff;
+                    outline: none;
+                    border: 1px solid #ffffff;
+                    opacity: 0;
+                    padding: 10px;
+                    width: 40px;
+                    height: 40px;
+                    margin: 0 auto;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+                    border-radius: 8px;
+                    cursor: pointer;
+                    position: relative;
+                    top: 10px;
+                    i {
+                        font-size: 20px;
+                        font-weight: 900;
+                    }
+                }
             }
         }
     }

@@ -65,11 +65,21 @@ this.App.scripts.home_page = function() {
             var bounds = placeholders[index].getBoundingClientRect();
             element.style.top = bounds.top - portfolio_bounds.top + 'px';
             element.style.left = bounds.left - portfolio_bounds.left + 'px';
-            
         });
     })();
 
     this.filter_portfolio = function() {
+        var figures = document.querySelectorAll('figure.portfolio__gallery__item');
+        figures.each_element(function(element) {
+            var height;
+            if (window.innerWidth >= 1268) {
+                height = '360px';
+            } else{
+                height = '250px';
+            }
+            element.style.height = height
+        })
+
         var placeholders = document.querySelectorAll('div.portfolio__gallery__item__placeholder');
         var image_containers = document.querySelectorAll('div.portfolio__gallery__item__container');
         var portfolio_bounds = document.querySelector('section#portfolio').getBoundingClientRect();
@@ -96,5 +106,12 @@ this.App.scripts.home_page = function() {
                 object.element.style.transform = 'scale(0, 0)';
             }
         });
+        
+        var failed = filtered.filter(element => !element.passed).length;
+        var counter = 0;
+        while (counter < failed) {
+            figures[figures.length - 1 - counter].style.height = '0px';
+            counter += 1;
+        }
     }   
 }
