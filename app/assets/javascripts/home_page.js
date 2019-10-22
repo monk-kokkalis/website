@@ -65,6 +65,13 @@ this.App.scripts.home_page = function() {
             var bounds = placeholders[index].getBoundingClientRect();
             element.style.top = bounds.top - portfolio_bounds.top + 'px';
             element.style.left = bounds.left - portfolio_bounds.left + 'px';
+            element.style.width = placeholders[0].getBoundingClientRect().width + 'px';
+            // var image = element.querySelector('img');
+            
+            // image.style.width = placeholders[index].getBoundingClientRect().width + 'px';
+            // image.style.height = placeholders[index].getBoundingClientRect().height + 'px';
+            
+            // image.style.width = '100%';
         });
     })();
 
