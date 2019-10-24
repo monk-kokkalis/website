@@ -120,5 +120,31 @@ this.App.scripts.home_page = function() {
             figures[figures.length - 1 - counter].style.height = '0px';
             counter += 1;
         }
-    }   
+    }
+
+    var overlay = document.querySelector('div.overlay');
+    var body = document.querySelector('body');
+    this.preview_portfolio_item = function(element) {
+        var button = element.closest('button');
+        var lightbox = button.closest('div.portfolio__gallery__item__container');
+        var image = lightbox.querySelector('img');
+
+        overlay.style.display = 'block';
+        body.style.overflow = 'hidden';
+
+        // if (App.global_variables.overlay_visible) {
+        //     overlay.style.display = 'none';
+        //     body.style.overflow = 'visible';
+        // } else {
+        //     overlay.style.display = 'block';
+        //     body.style.overflow = 'hidden';
+        // }
+        App.global_variables.overlay_visible = true;
+    }
+
+    this.hide_overlay = function() {
+        overlay.style.display = 'none';
+        body.style.overflow = 'visible';
+    }
+    
 }
