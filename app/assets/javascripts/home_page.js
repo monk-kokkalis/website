@@ -66,12 +66,6 @@ this.App.scripts.home_page = function() {
             element.style.top = bounds.top - portfolio_bounds.top + 'px';
             element.style.left = bounds.left - portfolio_bounds.left + 'px';
             element.style.width = placeholders[0].getBoundingClientRect().width + 'px';
-            // var image = element.querySelector('img');
-            
-            // image.style.width = placeholders[index].getBoundingClientRect().width + 'px';
-            // image.style.height = placeholders[index].getBoundingClientRect().height + 'px';
-            
-            // image.style.width = '100%';
         });
     })();
 
@@ -124,21 +118,16 @@ this.App.scripts.home_page = function() {
 
     var overlay = document.querySelector('div.overlay');
     var body = document.querySelector('body');
-    this.preview_portfolio_item = function(element) {
-        var button = element.closest('button');
+    
+    this.preview_portfolio_item = function() {
+        var button = this.closest('button');
         var lightbox = button.closest('div.portfolio__gallery__item__container');
-        var image = lightbox.querySelector('img');
+        var clicked_image = lightbox.querySelector('img');
+        var preview_image = document.querySelector('img.figure__image');
+        preview_image.src = clicked_image.src;
 
         overlay.style.display = 'block';
         body.style.overflow = 'hidden';
-
-        // if (App.global_variables.overlay_visible) {
-        //     overlay.style.display = 'none';
-        //     body.style.overflow = 'visible';
-        // } else {
-        //     overlay.style.display = 'block';
-        //     body.style.overflow = 'hidden';
-        // }
         App.global_variables.overlay_visible = true;
     }
 

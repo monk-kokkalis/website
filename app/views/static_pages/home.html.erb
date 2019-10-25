@@ -1,6 +1,12 @@
 <%= render partial: 'partial/navigation' %>
 <div class="overlay" data-controller="home_page" data-handler="hide_overlay">
-
+    <figure>
+        <button data-controller="home_page" data-handler="hide_overlay">x</button>
+        <%= image_tag 'portfolio/restaurant.jpg', class: 'figure__image' %>
+        <div class="figure__image-number">1/6</div>
+    </figure>
+    <button class="overlay__left-arrow"></button>
+    <button class="overlay__right-arrow"></button>
 </div>
 <%# <div class="page-container"> %>
     <section class="main-section">

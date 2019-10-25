@@ -30,7 +30,7 @@
             if (!controller || !handler) return;
             if (!App.scripts[controller][handler]) throw 'the '+ handler + 
                 ' handler' + 'does not exist in the ' + controller + ' controller';
-            App.scripts[controller][handler](this);
+            App.scripts[controller][handler].call(this);
         }
         NodeList.prototype.each_element = function(predicate) {
             Array.prototype.forEach.call(this, predicate);
