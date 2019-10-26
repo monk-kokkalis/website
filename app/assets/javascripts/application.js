@@ -21,6 +21,54 @@
             };
         }
 
+        if (!Array.prototype.find) {
+            Object.defineProperty(Array.prototype, 'find', {
+                value: function(predicate) {
+                    if (typeof predicate !== 'function') {
+                        throw TypeError('the predicate is not a function');
+                    }
+                    
+                    var array_length = this.length >>> 0;
+                    var index = 0;
+                    var thisArg = arguments[1];
+            
+                    while (index < array_length) {
+                        if (predicate.call(thisArg, this[index], index, this)) {
+                            return this[index];
+                        }
+                        index += 1;
+                    }
+                    return undefined;
+                },
+                configurable: true,
+                writable: true
+            });
+        }
+
+        if (!Array.prototype.findIndex) {
+            Object.defineProperty(Array.prototype, 'findIndex', {
+                value: function(predicate) {
+                    if (typeof predicate !== 'function') {
+                        throw TypeError('the predicate is not a function');
+                    }
+                    
+                    var array_length = this.length >>> 0;
+                    var index = 0;
+                    var thisArg = arguments[1];
+            
+                    while (index < array_length) {
+                        if (predicate.call(thisArg, this[index], index, this)) {
+                            return index;
+                        }
+                        index += 1;
+                    }
+                    return undefined;
+                },
+                configurable: true,
+                writable: true
+            });
+        }
+
     }).call(this);
 
     (function init() {
@@ -43,6 +91,9 @@
                 }
             });
         }
+        NodeList.prototype.find_index = function(predicate) {
+            return Array.prototype.findIndex.call(this, predicate);
+        };
     }).call(this);
     
     var load = function() {
@@ -63,7 +114,8 @@
         this.App.scroll();
     }
 
-    var touchend = function(event) {
+    var touchmove = function(event) {
+        // console.log(event.type)
         if (event.cancelable) {
             if (App.global_variables.overlay_visible) event.preventDefault();
         }
@@ -73,6 +125,6 @@
     window.addEventListener('scroll', scroll);
     window.addEventListener('click', click);
     window.addEventListener('resize', resize);
-    window.addEventListener('touchend', touchend)
+    window.addEventListener('touchmove', touchmove)
 }).call(this)
 

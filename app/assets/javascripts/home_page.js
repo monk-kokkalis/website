@@ -31,6 +31,27 @@ this.App.scripts.home_page = function() {
     Array.prototype.forEach.call(links, function(element) {
         element.setAttribute('data-handler', 'down_arrow');
     });
+
+    var image_containers = document.querySelectorAll('div.portfolio__gallery__item__container');
+    var preview_image = document.querySelector('img.figure__image');
+    var figure_image_number = document.querySelector('div.figure__image-number');
+    this.change_preview_item = function() {
+        var index = App.global_variables.active_portfolio_index;
+        var direction = this.dataset.direction;
+        if (direction == 'left') {
+            index -= 1;
+            if (index < 0) index = 5;
+        }
+        if (direction == 'right') {
+            index += 1;
+            if (index > 5) index = 0;
+        }
+        App.global_variables.active_portfolio_index = index;
+        var active_image = image_containers[index].querySelector('img');
+        preview_image.src = active_image.src;
+        figure_image_number.innerHTML = index + 1 + '/6'
+
+    }
     
     this.down_arrow = function() {
         var target = document.querySelector('#about-me');
@@ -82,7 +103,6 @@ this.App.scripts.home_page = function() {
         })
 
         var placeholders = document.querySelectorAll('div.portfolio__gallery__item__placeholder');
-        var image_containers = document.querySelectorAll('div.portfolio__gallery__item__container');
         var portfolio_bounds = document.querySelector('section#portfolio').getBoundingClientRect();
 
         var filter_buttons = document.querySelectorAll('button[data-handler=filter_portfolio]');
@@ -123,7 +143,11 @@ this.App.scripts.home_page = function() {
         var button = this.closest('button');
         var lightbox = button.closest('div.portfolio__gallery__item__container');
         var clicked_image = lightbox.querySelector('img');
-        var preview_image = document.querySelector('img.figure__image');
+        var index = image_containers.find_index(function(element) {
+           return element === lightbox;
+        });
+        App.global_variables.active_portfolio_index = index;
+        figure_image_number.innerHTML = index + 1 + '/6'
         preview_image.src = clicked_image.src;
 
         overlay.style.display = 'block';

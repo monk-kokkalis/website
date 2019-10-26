@@ -42,6 +42,10 @@ div.overlay {
 
         img {
             width: 100%;
+            max-height: 385px;
+            @media (max-width: 450px) {
+                max-height: 138px;
+            }
         }
 
         div.figure__image-number {
@@ -121,6 +125,9 @@ div.banner {
     position: absolute;
     top: 30%;
     left: 10%;
+    @media (max-width: 450px) {
+        width: 240px;
+    }
 }
 
 @media (max-width: 530px) {
@@ -142,11 +149,6 @@ h1.banner__main-header {
     }
 }
 
-@media (max-width: 3) {
-    h1.banner__main-header {
-        font-size: 58px;
-    }
-}
 
 @media (max-width: 530px) {
     h1.banner__main-header {
@@ -196,19 +198,20 @@ h2.banner__sub-header.retracting-text::after {
 
 
 h2.banner__sub-header.retracting-text {
-    width: 75%;
+    width: 70%;
 }
 
 @media (max-width: 768px) {
     h2.banner__sub-header.retracting-text {
-        width: 100%;
-        min-width: 40%;
+        width: 90%;
+        min-width: 34%;
     }
 }
 
 @media (max-width: 530px) {
     h2.banner__sub-header.retracting-text {
-        min-width: 43%;
+        width: 100%;
+        min-width: 38%;
     }
 }
 
@@ -628,4 +631,104 @@ section.portfolio {
             }
         }
     }
+}
+section.skills {
+    background: #f2f2f2;
+    div.skills__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-family: 'Open Sans', 'Tahoma', sans-serif;
+        color: #444444;
+        div.skills__container__item {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            flex: 0 1 48%;
+            font-size: 14px;
+            @media (max-width: 600px) {
+                flex: 0 1 100%;
+            }
+            div.skill__item-text {
+                display: flex;
+                margin-bottom: 10px;
+                & > div {
+                    flex: 0 1 50%;
+                    &:last-of-type {
+                        text-align: right;
+                        font-weight: 900;
+                    }
+                }
+            }
+
+            div.skill__percentage {
+                div.skill__percentage__bar {
+                    height: 5px;
+                    background-color: rgba(0, 0, 0, 0.15);
+                }
+                div.skill__percentage__progress {
+                    width: 94%;
+                    background-color: #222222;
+                    height: 100%;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+            }
+
+            &:nth-of-type(2) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 91%;
+                }
+            }
+
+            &:nth-of-type(3) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 88%;
+                }
+            }
+
+            &:nth-of-type(4) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 73%;
+                }
+            }
+
+            &:nth-of-type(5) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 60%;
+                }
+            }
+
+            &:nth-of-type(6) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 80%;
+                }
+            }
+
+            &:nth-of-type(7) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 75%;
+                }
+            }
+
+            &:nth-of-type(7) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 75%;
+                }
+            }
+
+            &:nth-of-type(8) {
+                div.skill__percentage div.skill__percentage__progress {
+                    width: 70%;
+                }
+            }
+        }
+        
+    }
+}
+
+h2.section__header {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444444;
 }

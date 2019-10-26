@@ -5,303 +5,403 @@
         <%= image_tag 'portfolio/restaurant.jpg', class: 'figure__image' %>
         <div class="figure__image-number">1/6</div>
     </figure>
-    <button class="overlay__left-arrow"></button>
-    <button class="overlay__right-arrow"></button>
+    <button class="overlay__left-arrow" 
+        data-controller="home_page" 
+        data-handler="change_preview_item"
+        data-direction="left"></button>
+    <button class="overlay__right-arrow" 
+        data-controller="home_page" 
+        data-handler="change_preview_item"
+        data-direction="right"></button>
 </div>
-<%# <div class="page-container"> %>
-    <section class="main-section">
-        <div class="banner">
-            <%# <% if false %>
-            <h1 class="banner__main-header">Hi, I'm Monk.</h1>
-            <h2 class="banner__sub-header">Web Applications Developer</h2>
-            <h2 class="banner__sub-header retracting-text retract">Specialized in <span>Creating Websites.</span></h2>
-            <%# <% end %>
-            <%# <h1 class="banner__main-header">Welcome</h1>
-            <h2 class="banner__sub-header">Text for testing</h2> %>
-            <%# <h2 class="banner__sub-header retracting-text retract">Specialized in <span>Creating Websites.</span></h2> %>
+<section class="main-section">
+    <div class="banner">
+        <h1 class="banner__main-header">Hi, I'm Monk.</h1>
+        <h2 class="banner__sub-header">Web Applications Developer</h2>
+        <h2 class="banner__sub-header retracting-text retract">Proficient in <span>Creating Websites.</span></h2>
+    </div>
+    <a href="#about-me-section" class="banner__down-arrow bounce" data-controller="home_page">
+        <i 
+            class="ti-angle-down down-arrow-link" 
+            data-controller="home_page">
+        </i>
+    </a>
+</section>
+<section class="about-me" id="about-me">
+    <div class="about-me__profile-picture-container">
+        <%= image_tag 'res-guy.jpg' %>
+    </div>
+    <div class="about-me__text">
+        <h2>About Me</h2>
+        <h3>Web Developer</h3>
+        <p>
+            I'm <strong>Monk Kokkalis</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </p>
+        <p>
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+        <div class="about-me__icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
+                <i class="ti-facebook"></i>
+            </a>
+
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
+                <i class="ti-twitter-alt"></i>
+            </a>
+
+            <a href="https://accounts.google.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
+                <i class="ti-google"></i>
+            </a>
+
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
+                <i class="ti-instagram"></i>
+            </a>
+
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
+                <i class="ti-tumblr-alt"></i>
+            </a>
         </div>
-        <a href="#about-me-section" class="banner__down-arrow bounce" data-controller="home_page">
-            <i 
-                class="ti-angle-down down-arrow-link" 
-                data-controller="home_page">
-            </i>
-        </a>
-    </section>
-    <section class="about-me" id="about-me">
-        <div class="about-me__profile-picture-container">
-            <%= image_tag 'res-guy.jpg' %>
-        </div>
-        <div class="about-me__text">
-            <h2>About Me</h2>
-            <h3>Web Developer</h3>
+    </div>
+</section>
+<section class="services" id="services">
+    <h2 class="services-first__header">Services</h2>
+    <h3 class="services__second-header">What I can do</h3>
+    <ul class="services__list">
+        <li>
+            <div>
+                <span class="services__list__icon-container">
+                    <i class="ti-desktop"></i>
+                </span>
+            </div>
+            <h4>Web UI Design</h4>
             <p>
-                I'm <strong>Monk Kokkalis</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.
             </p>
+        </li>
+        <li>
+            <div>
+                <span class="services__list__icon-container">
+                    <i class="ti-layout"></i>
+                </span>
+            </div>
+            <h4>Web Development</h4>
             <p>
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.
             </p>
-            <div class="about-me__icons">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
-                    <i class="ti-facebook"></i>
-                </a>
-
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
-                    <i class="ti-twitter-alt"></i>
-                </a>
-
-                <a href="https://accounts.google.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
-                    <i class="ti-google"></i>
-                </a>
-
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
-                    <i class="ti-instagram"></i>
-                </a>
-
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="about-me__icons__icon">
-                    <i class="ti-tumblr-alt"></i>
-                </a>
+        </li>
+        <li>
+            <div>
+                <span class="services__list__icon-container">
+                    <i class="ti-mobile"></i>
+                </span>
             </div>
-        </div>
-    </section>
-    <section class="services" id="services">
-        <h2 class="services-first__header">Services</h2>
-        <h3 class="services__second-header">What I can do</h3>
-        <ul class="services__list">
-            <li>
-                <div>
-                    <span class="services__list__icon-container">
-                        <i class="ti-desktop"></i>
-                    </span>
-                </div>
-                <h4>Web Design</h4>
-                <p>
-                    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.
-                </p>
-            </li>
-            <li>
-                <div>
-                    <span class="services__list__icon-container">
-                        <i class="ti-layout"></i>
-                    </span>
-                </div>
-                <h4>Web Development</h4>
-                <p>
-                    No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.
-                </p>
-            </li>
-            <li>
-                <div>
-                    <span class="services__list__icon-container">
-                        <i class="ti-mobile"></i>
-                    </span>
-                </div>
-                <h4>Responsive Design</h4>
-                <p>
-                Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
-                </p>
-            </li>
-
-            <li>
-                <div>
-                    <span class="services__list__icon-container">
-                        <i class="ti-target"></i>
-                    </span>
-                </div>
-                <h4>Game Development</h4>
-                <p>
-                Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
-                </p>
-            </li>
-
-            <li>
-                <div>
-                    <span class="services__list__icon-container">
-                        <i class="ti-harddrives"></i>
-                    </span>
-                </div>
-                <h4>Application Deployment</h4>
-                <p>
-                Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
-                </p>
-            </li>
-
-            <li>
-                <div>
-                    <span class="services__list__icon-container">
-                        <i class="ti-settings"></i>
-                    </span>
-                </div>
-                <h4>Support</h4>
-                <p>
-                Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
-                </p>
-            </li>
-            
-        </ul>
-    </section>
-    <section class="achievements" id="achievements">
-        <div class="achievements__item">
-            <div class="achievements__item__icon-container">
-                <i class="ti-user"></i>
-            </div>
-            <div class="achievements__item__count happy-users">
-                3
-            </div>
-            <p class="achievements__item__description">
-                Happy Clients
+            <h4>Mobile Support</h4>
+            <p>
+            Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
             </p>
+        </li>
+
+        <li>
+            <div>
+                <span class="services__list__icon-container">
+                    <i class="ti-target"></i>
+                </span>
+            </div>
+            <h4>Game Development</h4>
+            <p>
+            Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
+            </p>
+        </li>
+
+        <li>
+            <div>
+                <span class="services__list__icon-container">
+                    <i class="ti-harddrives"></i>
+                </span>
+            </div>
+            <h4>Application Deployment</h4>
+            <p>
+            Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
+            </p>
+        </li>
+
+        <li>
+            <div>
+                <span class="services__list__icon-container">
+                    <i class="ti-settings"></i>
+                </span>
+            </div>
+            <h4>Application Maintenance</h4>
+            <p>
+            Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
+            </p>
+        </li>
+        
+    </ul>
+</section>
+<section class="achievements" id="achievements">
+    <div class="achievements__item">
+        <div class="achievements__item__icon-container">
+            <i class="ti-user"></i>
+        </div>
+        <div class="achievements__item__count happy-users">
+            3
+        </div>
+        <p class="achievements__item__description">
+            Happy Clients
+        </p>
+    </div>
+
+    <div class="achievements__item">
+        <div class="achievements__item__icon-container">
+            <i class="ti-briefcase"></i>
+        </div>
+        <div class="achievements__item__count happy-users">
+            1
+        </div>
+        <p class="achievements__item__description">
+            Projects Completed
+        </p>
+    </div>
+
+    <div class="achievements__item">
+        <div class="achievements__item__icon-container">
+            <i class="ti-desktop"></i>
+        </div>
+        <div class="achievements__item__count happy-users">
+            2
+        </div>
+        <p class="achievements__item__description">
+            Websites Created
+        </p>
+    </div>
+
+    <div class="achievements__item">
+        <div class="achievements__item__icon-container">
+            <i class="ti-medall"></i>
+        </div>
+        <div class="achievements__item__count happy-users">
+            4
+        </div>
+        <p class="achievements__item__description">
+            Trainings Finished
+        </p>
+    </div>
+</section>
+<section class="portfolio" id="portfolio">
+    <h2 class="portfolio__header">Portfolio</h2>
+    <h3 class="portfolio__description">Projects I have done</h3>
+    <ul class="portfolio__button-list">
+        <li>
+            <button class="active" 
+                data-category="all"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">All</button>
+        </li>
+        <li>
+            <button 
+                data-category="web-design"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">Web Design</button>
+        </li>
+        <li>
+            <button 
+                data-category="applications"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">Applications</button>
+        </li>
+        <li>
+            <button 
+                data-category="development"
+                data-controller="home_page" 
+                data-handler="filter_portfolio">Development</button>
+        </li>
+    </ul>
+    <div class="portfolio__gallery">
+        <figure class="portfolio__gallery__item">
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container" data-category="all">
+                    <div class="portfolio__gallery__item__container__lightbox">
+                        <div class="hollow-container"></div>
+                        <h2>Application</h2>
+                        <button data-controller="home_page" data-handler="preview_portfolio_item">
+                            <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
+                        </button>
+                    </div>
+                    <%= image_tag 'portfolio/restaurant.jpg' %>
+                </div>
+            </div>
+        </figure>
+        <figure class="portfolio__gallery__item">
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container" data-category="development applications all">
+                    <div class="portfolio__gallery__item__container__lightbox">
+                        <div class="hollow-container"></div>
+                        <h2>Web Design</h2>
+                        <button data-controller="home_page" data-handler="preview_portfolio_item">
+                            <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
+                        </button>
+                    </div>
+                    <%= image_tag 'portfolio/burger.jpg' %>
+                </div>
+            </div>
+        </figure>
+        <figure class="portfolio__gallery__item">
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container" data-category="web-design applications all">
+                    <div class="portfolio__gallery__item__container__lightbox">
+                        <div class="hollow-container"></div>
+                        <h2>Web Design</h2>
+                        <button data-controller="home_page" data-handler="preview_portfolio_item">
+                            <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
+                        </button>
+                    </div>
+                    <%= image_tag 'portfolio/chicken.jpg' %>
+                </div>
+            </div>
+        </figure>
+        <figure class="portfolio__gallery__item">
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container" data-category="development all">
+                    <div class="portfolio__gallery__item__container__lightbox">
+                        <div class="hollow-container"></div>
+                        <h2>Application</h2>
+                        <button data-controller="home_page" data-handler="preview_portfolio_item">
+                            <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
+                        </button>
+                    </div>
+                    <%= image_tag 'portfolio/guitar.jpg' %>
+                </div>
+            </div>
+        </figure>
+        <figure class="portfolio__gallery__item">
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container" data-category="web-design applications all">
+                    <div class="portfolio__gallery__item__container__lightbox">
+                        <div class="hollow-container"></div>
+                        <h2>Development</h2>
+                        <button data-controller="home_page" data-handler="preview_portfolio_item">
+                            <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
+                        </button>
+                    </div>
+                    <%= image_tag 'portfolio/desktop.jpg', class: 'portfolio__gallery__item__image' %>
+                </div>
+            </div>
+        </figure>
+        <figure class="portfolio__gallery__item">
+            <div class="portfolio__gallery__item__placeholder">
+                <div class="portfolio__gallery__item__container" data-category="web-design applications all">
+                    <div class="portfolio__gallery__item__container__lightbox">
+                        <div class="hollow-container"></div>
+                        <h2>Development</h2>
+                        <button data-controller="home_page" data-handler="preview_portfolio_item">
+                            <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
+                        </button>
+                    </div>
+                    <%= image_tag 'portfolio/laptop.jpg' %>
+                </div>
+            </div>
+        </figure>
+    </div>
+</section>
+<section class="skills" id="skills">
+    <h2 class="section__header">Technical Skills</h2>
+    <div class="skills__container">
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>HTML5</div>
+                <div>94%</div>
+            </div>
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="achievements__item">
-            <div class="achievements__item__icon-container">
-                <i class="ti-briefcase"></i>
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>CSS</div>
+                <div>91%</div>
             </div>
-            <div class="achievements__item__count happy-users">
-                1
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
+                </div>
             </div>
-            <p class="achievements__item__description">
-                Projects Completed
-            </p>
         </div>
 
-        <div class="achievements__item">
-            <div class="achievements__item__icon-container">
-                <i class="ti-desktop"></i>
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>JavaScript</div>
+                <div>88%</div>
             </div>
-            <div class="achievements__item__count happy-users">
-                2
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
+                </div>
             </div>
-            <p class="achievements__item__description">
-                Websites Created
-            </p>
         </div>
 
-        <div class="achievements__item">
-            <div class="achievements__item__icon-container">
-                <i class="ti-medall"></i>
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>Angular 2+</div>
+                <div>73%</div>
             </div>
-            <div class="achievements__item__count happy-users">
-                4
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
+                </div>
             </div>
-            <p class="achievements__item__description">
-                Trainings Finished
-            </p>
         </div>
-    </section>
-    <section class="portfolio" id="portfolio">
-        <h2 class="portfolio__header">Portfolio</h2>
-        <h3 class="portfolio__description">Projects I have done</h3>
-        <ul class="portfolio__button-list">
-            <li>
-                <button class="active" 
-                    data-category="all"
-                    data-controller="home_page" 
-                    data-handler="filter_portfolio">All</button>
-            </li>
-            <li>
-                <button 
-                    data-category="web-design"
-                    data-controller="home_page" 
-                    data-handler="filter_portfolio">Web Design</button>
-            </li>
-            <li>
-                <button 
-                    data-category="applications"
-                    data-controller="home_page" 
-                    data-handler="filter_portfolio">Applications</button>
-            </li>
-            <li>
-                <button 
-                    data-category="development"
-                    data-controller="home_page" 
-                    data-handler="filter_portfolio">Development</button>
-            </li>
-        </ul>
-        <div class="portfolio__gallery">
-            <figure class="portfolio__gallery__item">
-                <div class="portfolio__gallery__item__placeholder">
-                    <div class="portfolio__gallery__item__container" data-category="all">
-                        <div class="portfolio__gallery__item__container__lightbox">
-                            <div class="hollow-container"></div>
-                            <h2>Application</h2>
-                            <button data-controller="home_page" data-handler="preview_portfolio_item">
-                                <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
-                            </button>
-                        </div>
-                        <%= image_tag 'portfolio/restaurant.jpg' %>
-                    </div>
+
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>Node JS</div>
+                <div>60%</div>
+            </div>
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
                 </div>
-            </figure>
-            <figure class="portfolio__gallery__item">
-                <div class="portfolio__gallery__item__placeholder">
-                    <div class="portfolio__gallery__item__container" data-category="development applications all">
-                        <div class="portfolio__gallery__item__container__lightbox">
-                            <div class="hollow-container"></div>
-                            <h2>Web Design</h2>
-                            <button data-controller="home_page" data-handler="preview_portfolio_item">
-                                <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
-                            </button>
-                        </div>
-                        <%= image_tag 'portfolio/burger.jpg' %>
-                    </div>
-                </div>
-            </figure>
-            <figure class="portfolio__gallery__item">
-                <div class="portfolio__gallery__item__placeholder">
-                    <div class="portfolio__gallery__item__container" data-category="web-design applications all">
-                        <div class="portfolio__gallery__item__container__lightbox">
-                            <div class="hollow-container"></div>
-                            <h2>Web Design</h2>
-                            <button data-controller="home_page" data-handler="preview_portfolio_item">
-                                <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
-                            </button>
-                        </div>
-                        <%= image_tag 'portfolio/chicken.jpg' %>
-                    </div>
-                </div>
-            </figure>
-            <figure class="portfolio__gallery__item">
-                <div class="portfolio__gallery__item__placeholder">
-                    <div class="portfolio__gallery__item__container" data-category="development all">
-                        <div class="portfolio__gallery__item__container__lightbox">
-                            <div class="hollow-container"></div>
-                            <h2>Application</h2>
-                            <button data-controller="home_page" data-handler="preview_portfolio_item">
-                                <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
-                            </button>
-                        </div>
-                        <%= image_tag 'portfolio/guitar.jpg' %>
-                    </div>
-                </div>
-            </figure>
-            <figure class="portfolio__gallery__item">
-                <div class="portfolio__gallery__item__placeholder">
-                    <div class="portfolio__gallery__item__container" data-category="web-design applications all">
-                        <div class="portfolio__gallery__item__container__lightbox">
-                            <div class="hollow-container"></div>
-                            <h2>Development</h2>
-                            <button data-controller="home_page" data-handler="preview_portfolio_item">
-                                <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
-                            </button>
-                        </div>
-                        <%= image_tag 'portfolio/desktop.jpg', class: 'portfolio__gallery__item__image' %>
-                    </div>
-                </div>
-            </figure>
-            <figure class="portfolio__gallery__item">
-                <div class="portfolio__gallery__item__placeholder">
-                    <div class="portfolio__gallery__item__container" data-category="web-design applications all">
-                        <div class="portfolio__gallery__item__container__lightbox">
-                            <div class="hollow-container"></div>
-                            <h2>Development</h2>
-                            <button data-controller="home_page" data-handler="preview_portfolio_item">
-                                <i class="ti-search" data-controller="home_page" data-handler="preview_portfolio_item"></i>
-                            </button>
-                        </div>
-                        <%= image_tag 'portfolio/laptop.jpg' %>
-                    </div>
-                </div>
-            </figure>
+            </div>
         </div>
-    </section>
-<%# </div> %>
+
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>Ruby on Rails</div>
+                <div>80%</div>
+            </div>
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>Phaser 2</div>
+                <div>75%</div>
+            </div>
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills__container__item">
+            <div class="skill__item-text">
+                <div>Git and Nginx</div>
+                <div>70%</div>
+            </div>
+            <div class="skill__percentage">
+                <div class="skill__percentage__bar">
+                    <div class="skill__percentage__progress"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
