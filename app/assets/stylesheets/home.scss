@@ -113,7 +113,7 @@ div.overlay {
 
 section.main-section {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), #0000004d),
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), #0000004d),
         url('background.jpg');
     background-position: top;
     background-size: cover;
@@ -340,14 +340,24 @@ section.services {
         justify-content: space-between;
 
         li {
-            & > * {
-                margin-bottom: 20px;
-            }
-
+            padding: 20px;
+            background-color: #ffffff;
             margin-top: 40px;
             flex: 0 1 30%;
-            height: 265px;
             text-align: center;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+            transition: transform 350ms ease-in-out, box-shadow 350ms ease-in-out;
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+                h4::after {
+                    transform: translateX(-50%) scale(0.8, 0.8);
+                }
+            }
+            & > *:not(p) {
+                margin-bottom: 20px;
+            }
             @media (max-width: 768px) {
                 flex: 0 1 49%;
             }
@@ -362,11 +372,8 @@ section.services {
                 border: 1px solid #e3e3e3;
                 position: relative;
                 display: inline-block;
-                transition: background-color 450ms ease-in-out;
                 cursor: pointer;
-                &:hover {
-                    background-color: #fefefe;
-                }
+                
                 i {
                     position: absolute;
                     font-size: 30px;
@@ -381,6 +388,18 @@ section.services {
                 color: #222222;
                 text-transform: uppercase;
                 font-weight: 900;
+                position: relative;
+                &::after {
+                    content: '';
+                    height: 2px;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    position: absolute;
+                    width: 50%;
+                    left: 50%;
+                    bottom: -10px;
+                    transform: translateX(-50%) scale(0.3, 0.3);
+                    transition: transform 350ms ease-in-out;
+                }
             }
 
             p {
@@ -633,7 +652,6 @@ section.portfolio {
     }
 }
 section.skills {
-    background: #f2f2f2;
     div.skills__container {
         display: flex;
         justify-content: space-between;
@@ -666,59 +684,11 @@ section.skills {
                     background-color: rgba(0, 0, 0, 0.15);
                 }
                 div.skill__percentage__progress {
-                    width: 94%;
+                    width: 0;
                     background-color: #222222;
                     height: 100%;
                     border-top-right-radius: 5px;
                     border-bottom-right-radius: 5px;
-                }
-            }
-
-            &:nth-of-type(2) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 91%;
-                }
-            }
-
-            &:nth-of-type(3) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 88%;
-                }
-            }
-
-            &:nth-of-type(4) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 73%;
-                }
-            }
-
-            &:nth-of-type(5) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 60%;
-                }
-            }
-
-            &:nth-of-type(6) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 80%;
-                }
-            }
-
-            &:nth-of-type(7) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 75%;
-                }
-            }
-
-            &:nth-of-type(7) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 75%;
-                }
-            }
-
-            &:nth-of-type(8) {
-                div.skill__percentage div.skill__percentage__progress {
-                    width: 70%;
                 }
             }
         }
@@ -731,4 +701,55 @@ h2.section__header {
     text-align: center;
     margin-bottom: 30px;
     color: #444444;
+}
+
+section.contact-me {
+    background-color: #f2f2f2;
+    h2.section__header {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    h3.section__main-header {
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #222222;
+        margin-bottom: 40px;
+    }
+
+    div.contact__information {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        div.contact__information__item {
+            flex: 0 1 32%;
+            box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);
+            height: 200px;
+            background-color: #ffffff;
+            margin-top: 60px;
+            @media (max-width: 750px) {
+                flex: 0 1 100%;
+            }
+            div.contact__information__item__icon-container {
+                font-size: 40px;
+                box-shadow: 0 4px 6px rgba(50, 50, 93, .10), 0 1px 3px rgba(0, 0, 0, .10);
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                line-height: 100px;
+                position: relative;
+                top: -25%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #ffffff;
+                img {
+                    position: absolute;
+                    width: 60px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
 }

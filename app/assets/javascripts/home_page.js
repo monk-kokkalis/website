@@ -50,7 +50,6 @@ this.App.scripts.home_page = function() {
         var active_image = image_containers[index].querySelector('img');
         preview_image.src = active_image.src;
         figure_image_number.innerHTML = index + 1 + '/6'
-
     }
     
     this.down_arrow = function() {
