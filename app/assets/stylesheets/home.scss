@@ -704,30 +704,57 @@ h2.section__header {
 }
 
 section.contact-me {
-    background-color: #f2f2f2;
+    // background: linear-gradient(to right, rgba(0, 0, 0, 0.9), #0000004d),
+    //     url('contact-me/contact.jpg');
+    // background: linear-gradient(to right, rgba(0, 0, 0, 0.9), #0000004d),
+    //     url('world-map.png');
+    // background-position: top;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.15;
+        background: url('world-map.png');
+        width: 100%;
+        height: 100%;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
     h2.section__header {
         font-size: 20px;
         margin-bottom: 10px;
+        // color: #f4f4f4;
     }
     h3.section__main-header {
+        // color: #EEEEEE;
         font-size: 30px;
         text-align: center;
         text-transform: uppercase;
-        color: #222222;
         margin-bottom: 40px;
     }
 
     div.contact__information {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         div.contact__information__item {
             flex: 0 1 32%;
+            max-width: 400px;
             box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);
             height: 200px;
-            background-color: #ffffff;
+            // background-color: #ffffff;
+            background: #fefefe;
             margin-top: 60px;
-            @media (max-width: 750px) {
+            position: relative;
+            border-radius: 4px;
+            @media (max-width: 850px) {
                 flex: 0 1 100%;
             }
             div.contact__information__item__icon-container {
@@ -737,7 +764,7 @@ section.contact-me {
                 height: 100px;
                 border-radius: 50%;
                 line-height: 100px;
-                position: relative;
+                position: absolute;
                 top: -25%;
                 left: 50%;
                 transform: translateX(-50%);
@@ -750,6 +777,31 @@ section.contact-me {
                     transform: translate(-50%, -50%);
                 }
             }
+            h2.contact__information__item__header {
+                margin: 70px 0px 20px 0px;
+                text-align: center;
+                font-family: 'Lato';
+                font-size: 22px;
+                font-weight: 300;
+                color: #32325d;
+            }
+            div {
+                color: #444444;
+                font-family: 'Lato', 'Tahoma', sans-serif;
+                text-align: center;
+            }
         }
+    }
+}
+footer {
+    height: 100px;
+    background-color: #222222;
+    color: #aaaaaa;
+    font-family: 'Lato', 'Tahoma', sans-serif;
+    div {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

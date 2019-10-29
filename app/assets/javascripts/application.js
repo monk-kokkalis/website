@@ -98,7 +98,9 @@
     
     var load = function() {
         for (let prop in this.App.scripts) {
-            this.App.scripts[prop].call(App.scripts[prop]);
+            if (App.scripts.hasOwnProperty(prop)) {
+                this.App.scripts[prop].call(App.scripts[prop]);
+            }
         }
     }
 
