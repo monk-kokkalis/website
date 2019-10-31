@@ -12,16 +12,35 @@ ul.navigation__list {
     list-style: none;
     float: right;
     display: flex;
+    justify-content: flex-end;
 }
 
 ul.navigation__list li {
     padding-left: 13px;
-}
-
-ul.navigation__list li:not(:first-of-type) a:hover {
-    opacity: 0.6;
-}
-
-ul.navigation__list li:first-of-type a {
-    color: #fff;
+    a {
+        color: #ffffff;
+        font-size: 16px;
+        transition: color 320ms ease-in-out;
+        position: relative;
+        &:hover {
+            color: #BDBDBD;
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: #ffffff;
+            bottom: -8px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 350ms ease-in-out;
+        }
+        &.active::after {
+            transform: scaleX(1);
+        }
+    }
 }
