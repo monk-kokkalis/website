@@ -17,30 +17,40 @@ ul.navigation__list {
 
 ul.navigation__list li {
     padding-left: 13px;
-    a {
-        color: #ffffff;
-        font-size: 16px;
-        transition: color 320ms ease-in-out;
-        position: relative;
-        &:hover {
-            color: #BDBDBD;
-            &::after {
-                transform: scaleX(1);
-            }
+    @media (max-width: 600px) {
+        &:not(:last-of-type) {
+            display: none;
         }
+    }
+}
+
+a.navigation__link {
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 320ms ease-in-out;
+    position: relative;
+    &:hover {
+        color: #BDBDBD;
         &::after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background-color: #ffffff;
-            bottom: -8px;
-            left: 0;
-            transform: scaleX(0);
-            transition: transform 350ms ease-in-out;
-        }
-        &.active::after {
             transform: scaleX(1);
         }
     }
+    &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #ffffff;
+        bottom: -8px;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 350ms ease-in-out;
+    }
+    &.active::after {
+        transform: scaleX(1);
+    }
+}
+
+a.dark-border::after {
+    background-color: #000000;
 }
