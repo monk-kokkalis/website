@@ -11,6 +11,12 @@ this.App.easing_functions = {
     quad_ease_out: function (t, b, c, d) {
         t /= d;
         return -c * t*(t-2) + b;
+    },
+    ease_in_out: function(t, b, c, d) {
+        t /= d/2;
+        if (t < 1) return c/2*t*t*t + b;
+        t -= 2;
+        return c/2*(t*t*t + 2) + b;
     }
 }
 for (var counter = 0; counter < 8; counter +=1 ) {
