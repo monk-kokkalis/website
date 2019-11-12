@@ -9,6 +9,11 @@ button.navigation__mobile-button {
     justify-content: space-between;
     height: 43px;
     outline: none;
+    display: none;
+    @media (max-width: 600px) {
+        display: flex;
+    }
+    
 }
 
 button.navigation__mobile-button > span {

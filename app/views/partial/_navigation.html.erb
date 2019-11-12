@@ -1,28 +1,49 @@
 <nav class="navigation" data-scroll-locked="true">
     <ul class="navigation__list">
         <li>
-            <a href="#" class="navigation__link active">Home</a>
+            <a 
+                class="navigation__link active" 
+                data-controller="navigation" 
+                data-handler="scroll_page" 
+                data-target="main"
+                >Home</a>
         </li>
         <li>
-            <a href="#" class="navigation__link">About</a>
+            <a class="navigation__link"
+                data-controller="navigation" 
+                data-handler="scroll_page"
+                data-target="about-me"
+                >About</a>
         </li>
         <li>
-            <a href="#" class="navigation__link">Services</a>
+            <a class="navigation__link"
+                data-controller="navigation" 
+                data-handler="scroll_page" 
+                data-target="services"
+                >Services</a>
         </li>
         <li>
-            <a href="#" class="navigation__link">Works</a>
+            <a class="navigation__link"
+                data-controller="navigation" 
+                data-handler="scroll_page" 
+                data-target="portfolio"
+                >Works</a>
         </li>
         <li>
-            <a href="#" class="navigation__link">Contact</a>
+            <a class="navigation__link"
+                data-controller="navigation" 
+                data-handler="scroll_page" 
+                data-target="contact"
+                >Contact</a>
         </li>
 
-        <%# <li>
+        <li>
             <button class="navigation__mobile-button" data-active="false" id="mobile-button" data-controller="mobile_navigation">
                 <span class="mobile-button__bar upper"></span>
                 <span class="mobile-button__bar middle"></span>
                 <span class="mobile-button__bar lower"></span>
             </button>
-        </li> %>
+        </li>
     </ul>
 </nav>
 <%# <nav class="mobile-navigation">

@@ -6,6 +6,7 @@ this.App.scroll = function() {
         var links = document.querySelectorAll('ul.navigation__list a');
         var button_bars = document.querySelectorAll('button.navigation__mobile-button span');
         var color = '#fff';
+        
         if (window.pageYOffset > 50) {
             navigation.style.animation = 'position_fixed 600ms ease-out forwards';
             navigation.style.position = 'fixed';
@@ -19,6 +20,11 @@ this.App.scroll = function() {
         }
         links.each_element(function(item) {
             item.style.color = color;
+            if (window.pageYOffset > 50) {
+                item.classList.add('dark-border');
+            } else {
+                item.classList.remove('dark-border');
+            }
         });
         button_bars.each_element(function(bar) {
             bar.style.backgroundColor = color;
@@ -109,4 +115,5 @@ this.App.scroll = function() {
             })
         }
     }).call(this);
+
 };
