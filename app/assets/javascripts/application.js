@@ -117,7 +117,6 @@
     }
 
     var touchmove = function(event) {
-        // console.log(event.type)
         if (event.cancelable) {
             if (App.global_variables.overlay_visible) event.preventDefault();
         }

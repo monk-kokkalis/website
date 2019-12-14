@@ -25,6 +25,7 @@ this.App.scroll = function() {
                 item.classList.remove('dark-border');
             }
         });
+        App.scripts.mobile_navigation.api.update_links(window.pageYOffset);
     }).call(this);
 
     (function animate_achievements() {
