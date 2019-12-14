@@ -1,10 +1,9 @@
 this.App.scroll = function() {
     'use strict';
-
+    
     (function animate_navigation() {
         var navigation = document.querySelector('nav.navigation');
         var links = document.querySelectorAll('ul.navigation__list a');
-        var button_bars = document.querySelectorAll('button.navigation__mobile-button span');
         var color = '#fff';
         
         if (window.pageYOffset > 50) {
@@ -26,9 +25,6 @@ this.App.scroll = function() {
                 item.classList.remove('dark-border');
             }
         });
-        button_bars.each_element(function(bar) {
-            bar.style.backgroundColor = color;
-        });        
     }).call(this);
 
     (function animate_achievements() {

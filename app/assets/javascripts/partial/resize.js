@@ -7,10 +7,5 @@ this.App.resize = function() {
         item.style.width = placeholders[0].getBoundingClientRect().width + 'px';
         item.style.left = bounds.left + 'px';
         item.style.top = bounds.top - portfolio_bounds.top + 'px';
-        // var image = item.querySelector('img');
-            
-        // image.style.width = placeholders[index].getBoundingClientRect().width + 'px';
-        // image.style.height = placeholders[index].getBoundingClientRect().height + 'px';
-        
     });        
 }

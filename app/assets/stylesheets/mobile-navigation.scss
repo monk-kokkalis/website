@@ -20,7 +20,7 @@ button.navigation__mobile-button > span {
     width: 50px;
     height: 8px;
     transform-origin: right;
-    background-color: #fff;
+    background-color: #000000;
     border-radius: 10px;
     transition: transform 450ms ease-in-out;
 }
@@ -36,3 +36,14 @@ nav.mobile-navigation a {
     color: #000000;
 }
 
+ul.mobile-navigation__list {
+    margin-top: 80px;
+    li {
+        padding: 10px;
+        a {
+            color: #000000;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    }
+}
