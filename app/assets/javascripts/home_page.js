@@ -27,6 +27,52 @@ this.App.scripts.home_page = function() {
         bouncing = !bouncing;
     }, 2300);
 
+    this.section_subject = (function() {
+        var observers = [];
+        var sections = [];
+        function Section(element) {
+            this.element = element;
+        }
+
+        Section.prototype.notify = function(data) {
+            observers.forEach(function(observer) {
+                observer(data);
+            });
+            // console.log(data);
+        }
+
+        Section.prototype.evaluate_bounds = function() {
+            var bound_rect = this.element.getBoundingClientRect();
+            if (bound_rect.bottom < bound_rect.height && bound_rect.bottom >= 0) {
+                this.notify(this.element.id);
+            }
+        }
+        
+        return {
+            subscribe: function(callback) {
+                if (Object.prototype.toString.call(callback) != '[object Function]') {
+                    throw callback + ' is not a valid section subject subscriber';
+                }
+                if (observers.some(o => callback === o)) {
+                    throw callback + ' is already subscribed to the section subject';
+                }
+
+                observers.push(callback);
+            },
+            update_state: function() {
+                sections.forEach(function(sec) {
+                    sec.evaluate_bounds();
+                })
+            },
+            initialize: function() {
+                document.querySelectorAll('section[data-page="home"]').each_element(function(el) {
+                    sections.push(new Section(el));
+                });
+            }
+        }
+    }).call(this);
+    this.section_subject.initialize();
+    
     var links = document.querySelectorAll('.down-arrow-link');
     Array.prototype.forEach.call(links, function(element) {
         element.setAttribute('data-handler', 'down_arrow');
