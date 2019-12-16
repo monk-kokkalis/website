@@ -26,7 +26,6 @@ this.App.scroll = function() {
             }
         });
         App.scripts.home_page.section_subject.update_state();
-        // App.scripts.mobile_navigation.api.update_links(window.pageYOffset);
     }).call(this);
 
     (function animate_achievements() {
@@ -91,7 +90,7 @@ this.App.scroll = function() {
             if (App.global_variables.skills_animating) return;
             if (App.global_variables.skill_elements_animating.some(done => done == false)) return;
             App.global_variables.skills_animating = true;
-            for (var counter = 0; counter < 8; counter +=1) {
+            for (var counter = 0; counter < 6; counter +=1) {
                 App.global_variables.skill_elements_animating[counter] = false;
             }
             skill_items.each_element(function(item, index) {
