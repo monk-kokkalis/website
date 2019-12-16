@@ -94,6 +94,10 @@
         NodeList.prototype.find_index = function(predicate) {
             return Array.prototype.findIndex.call(this, predicate);
         };
+
+        NodeList.prototype.find_element = function(predicate) {
+            return Array.prototype.find.call(this, predicate);
+        }
     }).call(this);
     
     var load = function() {
@@ -102,6 +106,7 @@
                 this.App.scripts[prop].call(App.scripts[prop]);
             }
         }
+        this.App.subscriptions();
     }
 
     var click = function(event) {

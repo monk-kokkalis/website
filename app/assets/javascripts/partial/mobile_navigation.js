@@ -25,28 +25,19 @@ this.App.scripts.mobile_navigation = function () {
             var mobile_links = [];
             mobile_list.classList.add('mobile-navigation__list');
 
-            function Link(element) {
-                this.element = element;
-            }
-
-            Link.prototype.update_border = function() {
-                var bounding_rect = this.element.getBoundingClientRect();
-            }
-
             return {
                 generate: function() {
-                    element.links.each_element(function(el, index) {
+                    element.links.each_element(function(el) {
                         var li = document.createElement('li');
                         var a = document.createElement('a');
                         a.classList.add('mobile-navigation__link');
-                        if (index == 0) a.classList.add('active')
                         a.setAttribute('data-controller', el.dataset.controller);
                         a.setAttribute('data-handler', el.dataset.handler);
                         a.setAttribute('data-target', el.dataset.target);
                         a.innerHTML = el.innerHTML;
                         li.appendChild(a);
                         mobile_list.appendChild(li);
-                        mobile_links.push(new Link(a));
+                        mobile_links.push(a);
                     });
                     element.navigation.appendChild(mobile_list);
                 },
@@ -75,26 +66,15 @@ this.App.scripts.mobile_navigation = function () {
                 active = !active;
             },
             update_links: function(section_id) {
-                // console.log('el top 1: ' + document.querySelectorAll('section[data-page="home"]')[0].getBoundingClientRect().top)
-                // console.log('el bottom 1: ' + document.querySelectorAll('section[data-page="home"]')[0].getBoundingClientRect().bottom)
-                // console.log('el 1 height: '+ document.querySelectorAll('section[data-page="home"]')[0].getBoundingClientRect().height)
-
-                // console.log('el top 2: ' + document.querySelectorAll('section[data-page="home"]')[1].getBoundingClientRect().top)
-                // console.log('el bottom 2: '+ document.querySelectorAll('section[data-page="home"]')[1].getBoundingClientRect().bottom)
-                // console.log('el 2 height: '+ document.querySelectorAll('section[data-page="home"]')[1].getBoundingClientRect().height)
-                // link_generator.get_links().forEach(function(el) {
-                //     el.classList.remove('active');
-                // });
-                //  bottom must be less than height but greater than 0;
-                // var sections = document.querySelectorAll('section[data-page="home"]');
-
-
-                // link_generator.get_mobile_links().forEach(function(link) {
-                //     link.update_border();
-                // })
-                console.log(section_id); 
+                var mobile_links = link_generator.get_mobile_links();
+                var active_link = mobile_links.find(function(el) {
+                    return el.dataset.target == section_id;
+                });
+                mobile_links.forEach(function(link) {
+                    link.classList.remove('active');
+                });
+                active_link.classList.add('active');
             }
         }
     }).call(this);
-    App.scripts.home_page.section_subject.subscribe(this.api.update_links);
 }

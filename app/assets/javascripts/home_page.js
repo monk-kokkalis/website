@@ -38,12 +38,11 @@ this.App.scripts.home_page = function() {
             observers.forEach(function(observer) {
                 observer(data);
             });
-            // console.log(data);
         }
 
         Section.prototype.evaluate_bounds = function() {
             var bound_rect = this.element.getBoundingClientRect();
-            if (bound_rect.bottom < bound_rect.height && bound_rect.bottom >= 0) {
+            if (bound_rect.bottom < bound_rect.height + 80 && bound_rect.bottom > 0) {
                 this.notify(this.element.id);
             }
         }

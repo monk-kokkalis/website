@@ -1,11 +1,5 @@
 this.App.scripts.navigation = function() {
-    var links = document.querySelectorAll('ul.navigation__list a');
     this.scroll_page = function() {
-        links.each_element(function(link) {
-            link.classList.remove('active');
-        });
-        this.classList.add('active');
-
         var target = document.querySelector('#' + this.dataset.target);
         if (!target) {
             throw new Error('Link target is not speficied');
@@ -27,4 +21,21 @@ this.App.scripts.navigation = function() {
         requestAnimationFrame(animation);
     }
     
+    this.api = (function() {
+        var links = document.querySelectorAll('ul.navigation__list a');
+        // var e = links.find_element(function(el) {
+        //     return el.dataset.target == 'main'
+        // })
+        return  {
+            update_links: function(section_id) {
+                var active_link = links.find_element(function(el) {
+                    return el.dataset.target == section_id
+                })
+                links.each_element(function(el) {
+                    el.classList.remove('active');
+                });
+                active_link.classList.add('active');
+            }
+        }
+    }).call(this)
 }
