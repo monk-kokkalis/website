@@ -58,3 +58,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # HTML sanitization
 gem 'loofah', '~> 2.3.1'
+gem 'eslint-utils', '1.4.3'
