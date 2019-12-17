@@ -141,6 +141,10 @@ h1.banner__main-header {
     color: #fff;
     font-size: 88px;
     margin-bottom: 20px;
+    width: 512px;
+    @media (max-width: 530px) {
+        width: auto;
+    }
 }
 
 @media (max-width: 768px) {
