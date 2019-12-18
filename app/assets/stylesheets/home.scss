@@ -114,7 +114,7 @@ div.overlay {
 section.main-section {
     height: 100vh;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), #0000004d),
-        url('background.jpg');
+        image_url('background.jpg');
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -416,7 +416,7 @@ section.services {
 section.achievements {
     min-height: 360px;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url('coffee-shop.jpeg');
+        image_url('coffee-shop.jpeg');
     margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -722,7 +722,7 @@ section.contact-me {
         top: 0;
         left: 0;
         opacity: 0.15;
-        background: url('world-map.png');
+        background: image_url('world-map.png');
         width: 100%;
         height: 100%;
         background-position: top;
